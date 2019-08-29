@@ -34,7 +34,7 @@ function App() {
   // const textInput = useRef(); // Uncontrolled input - no validation
 
   useEffect(async () => {}, []);
-  console.log(tmdbAPI());
+
   return (
     <div className="App">
       <header className="App-header">
