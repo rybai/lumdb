@@ -1,5 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Validate prop types
+// Validate prop types
+// Should ALWAYS have either a default prop OR an isRequired in the propTypes
+// 👇👇👇
+import PropTypes from 'prop-types';
 
 const Movie = ({ movie, desc = 'Description not available' }) => {
   return (
@@ -16,9 +19,5 @@ Movie.propTypes = {
   }),
   desc: PropTypes.string
 };
-
-// Movie.defaultProps = {
-//   desc: 'Description not available'
-// };
 
 export default Movie;
