@@ -4,20 +4,16 @@ import React from 'react';
 // 👇👇👇
 import PropTypes from 'prop-types';
 
-const Movie = ({ movie, desc = 'Description not available' }) => {
-  return (
-    <div key={movie.id}>
-      <h3>{movie.title}</h3>
-      <p>{desc}</p>
-    </div>
-  );
-};
+const Movie = ({ movie }) => (
+  <div>
+    <h3>{movie.title}</h3>
+  </div>
+);
 
 Movie.propTypes = {
   movie: PropTypes.shape({
-    title: PropTypes.string.isRequired
-  }),
-  desc: PropTypes.string
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default Movie;
