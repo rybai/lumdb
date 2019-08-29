@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Movie from './Movie';
 
 const movies = [
   {
@@ -35,24 +36,27 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      {movies.map(movie => (
+        <Movie key={movie.id} movie={movie} />
+      ))}
       <h1>Test</h1>
     </div>
   );
 }
 
-function Welcome({ text }) {
-  return (
-    <div>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {text}
-      </a>
-    </div>
-  );
-}
+// function Welcome({ text }) {
+//   return (
+//     <div>
+//       <a
+//         className="App-link"
+//         href="https://reactjs.org"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//       >
+//         {text}
+//       </a>
+//     </div>
+//   );
+// }
 
 export default App;
