@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
-import Movie from './Movie';
-import tmdbAPI from './APIKey';
+import MoviesList from './MoviesList';
 
-function App() {
+const App = () => (
   // // const [toggle, setToggle] = useState(true);
   // const [input, setInput] = useState('Hello');
   // eslint-disable-next-line comma-dangle
-  const [movies, setMovies] = useState([]);
 
   // const submit = () => {
   //   console.log(textInput.current.value);
@@ -19,34 +18,24 @@ function App() {
   // };
   // const textInput = useRef(); // Uncontrolled input - no validation
 
-  useEffect(() => {
-    const fetchMovies = async () => {
-      const api = tmdbAPI();
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/discover/movie?api_key=${api}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
-        );
-        const movieList = await response.json();
-        setMovies(movieList.results);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    fetchMovies();
-  }, []);
-
-  return (
+  <Router>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Link to="/">
+          <img src={logo} className="App-logo" alt="logo" />
+        </Link>
       </header>
-      {movies.map(movie => (
-        <Movie key={movie.id} movie={movie} />
-      ))}
+      <Switch>
+        <Route exact path="/" component={MoviesList} />
+        <Route path="/:id" component={Test} />
+        {/* if URL includes /test display the component */}
+      </Switch>
     </div>
-  );
-}
+  </Router>
+);
+
+// Match.params 👇👇👇 access the :id variable in Route Path
+const Test = ({ match }) => <h1>{match.params.id}</h1>;
 
 // const movies = [
 //   {
