@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import MoviesList from './MoviesList';
+import MovieDetail from './MovieDetail';
 
 const App = () => (
   // // const [toggle, setToggle] = useState(true);
@@ -27,15 +28,15 @@ const App = () => (
       </header>
       <Switch>
         <Route exact path="/" component={MoviesList} />
-        <Route path="/:id" component={Test} />
+        <Route path="/:id" component={MovieDetail} />
         {/* if URL includes /test display the component */}
       </Switch>
     </div>
   </Router>
 );
 
-// Match.params 👇👇👇 access the :id variable in Route Path
-const Test = ({ match }) => <h1>{match.params.id}</h1>;
+// * Match.params 👇👇👇 access the :id variable in Route Path
+// * const Test = ({ match }) => <h1>{match.params.id}</h1>;
 
 // const movies = [
 //   {
