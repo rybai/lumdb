@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { MovieGrid } from './style';
 import Movie from './Movie';
 import tmdbAPI from './APIKey';
 
@@ -23,11 +24,11 @@ function MoviesList() {
   }, []);
 
   return (
-    <div>
+    <MovieGrid>
       {movies.map(movie => (
         <Movie key={movie.id} movie={movie} />
       ))}
-    </div>
+    </MovieGrid>
   );
 }
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import tmdbAPI from './APIKey';
+import { Poster, MovieWrapper, MovieInfo } from './style';
+import Overdrive from 'react-overdrive';
 
 const posterPath = 'https://image.tmdb.org/t/p/w154';
 const backdropPath = 'https://image.tmdb.org/t/p/w1280';
@@ -25,13 +27,18 @@ function MovieDetail({ match }) {
   }, []);
 
   return (
-    <div>
-      <img src={`${backdropPath}${movie.backdrop_path}`} alt={movie.title} />
-      <img src={`${posterPath}${movie.poster_path}`} alt={movie.title} />
-      <h1>{movie.title}</h1>
-      <h3>{movie.release_date}</h3>
-      <p>{movie.overview}</p>
-    </div>
+    <MovieWrapper backdrop={`${backdropPath}${movie.backdrop_path}`}>
+      <MovieInfo>
+        <Overdrive id={movie.id} duration={600}>
+          <Poster src={`${posterPath}${movie.poster_path}`} alt={movie.title} />
+        </Overdrive>
+        <div>
+          <h1>{movie.title}</h1>
+          <h3>{movie.release_date}</h3>
+          <p>{movie.overview}</p>
+        </div>
+      </MovieInfo>
+    </MovieWrapper>
   );
 }
 
