@@ -27,7 +27,13 @@ function MovieDetail({ match }) {
   }, []);
 
   return (
-    <MovieWrapper backdrop={`${backdropPath}${movie.backdrop_path}`}>
+    <MovieWrapper
+      backdrop={
+        movie.backdrop_path
+          ? `${backdropPath}${movie.backdrop_path}`
+          : console.log('Movie detail not yet retrieved!')
+      }
+    >
       <MovieInfo>
         <Overdrive id={movie.id} duration={600}>
           <Poster src={`${posterPath}${movie.poster_path}`} alt={movie.title} />

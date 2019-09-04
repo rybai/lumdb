@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
 
-const App = () => (
+const App = () => {
   // // const [toggle, setToggle] = useState(true);
   // const [input, setInput] = useState('Hello');
   // eslint-disable-next-line comma-dangle
@@ -18,23 +18,35 @@ const App = () => (
   //   setInput(event.target.value.trim());
   // };
   // const textInput = useRef(); // Uncontrolled input - no validation
+  const [userMovieList, setUserMovieList] = useState([]);
 
-  <Router>
-    <div className="App">
-      <header className="App-header">
-        <Link to="/">
-          <img src={logo} className="App-logo" alt="logo" />
-        </Link>
-      </header>
-      <Switch>
-        <Route exact path="/" component={MoviesList} />
-        <Route path="/:id" component={MovieDetail} />
-        {/* if URL includes /test display the component */}
-      </Switch>
-    </div>
-  </Router>
-);
-
+  return (
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <Link to="/">
+            <img src={logo} className="App-logo" alt="logo" />
+          </Link>
+        </header>
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={props => (
+              <MoviesList
+                {...props}
+                userMovieList={userMovieList}
+                setUserMovieList={setUserMovieList}
+              />
+            )}
+          />
+          <Route path="/:id" component={MovieDetail} />
+          {/* if URL includes /test display the component */}
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 // * Match.params 👇👇👇 access the :id variable in Route Path
 // * const Test = ({ match }) => <h1>{match.params.id}</h1>;
 

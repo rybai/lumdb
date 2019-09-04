@@ -5,9 +5,16 @@ export const MovieGrid = styled.div`
   padding: 1rem;
   grid-template-columns: repeat(6, 1fr);
   grid-row-gap: 1rem;
+  > p {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    text-shadow: 2px 2px #ff0;
+  }
 `;
 
 export const Poster = styled.img`
+  position: relative;
   box-shadow: 0 0 35px black;
 `;
 
@@ -30,5 +37,18 @@ export const MovieInfo = styled.div`
   img {
     position: relative;
     top: -5rem;
+  }
+`;
+
+export const MovieContainer = styled.div`
+  top: 8px;
+  left: 16px;
+  position: relative;
+  > p {
+    color: white;
+    position: absolute;
+    top: -15px;
+    left: 50px;
+    -webkit-text-stroke: 1px black;
   }
 `;

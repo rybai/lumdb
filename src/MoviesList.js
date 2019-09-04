@@ -3,7 +3,7 @@ import { MovieGrid } from './style';
 import Movie from './Movie';
 import tmdbAPI from './APIKey';
 
-function MoviesList() {
+function MoviesList({ userMovieList, setUserMovieList }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -25,9 +25,17 @@ function MoviesList() {
 
   return (
     <MovieGrid>
-      {movies.map(movie => (
-        <Movie key={movie.id} movie={movie} />
-      ))}
+      {movies
+        .filter(movie => !userMovieList.includes(movie))
+        .map(movie => (
+          // movies.map(movie => (
+          <Movie
+            key={movie.id}
+            movie={movie}
+            userMovieList={userMovieList}
+            setUserMovieList={setUserMovieList}
+          />
+        ))}
     </MovieGrid>
   );
 }
