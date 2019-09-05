@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import MoviesList from './MoviesList';
 import MovieDetail from './MovieDetail';
+import UserMovies from './UserMovies';
 
 const App = () => {
   // // const [toggle, setToggle] = useState(true);
@@ -28,6 +29,7 @@ const App = () => {
             <img src={logo} className="App-logo" alt="logo" />
           </Link>
         </header>
+        <UserMovies userMovieList={userMovieList} />
         <Switch>
           <Route
             exact

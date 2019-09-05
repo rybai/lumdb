@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Poster, MovieContainer } from './style';
 import Overdrive from 'react-overdrive';
 
