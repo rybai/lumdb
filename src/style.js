@@ -44,11 +44,18 @@ export const MovieContainer = styled.div`
   top: 8px;
   left: 16px;
   position: relative;
-  > p {
-    color: white;
+  > p.addusermovie {
+    color: green;
     position: absolute;
     top: -15px;
-    left: 50px;
+    left: 30px;
+    -webkit-text-stroke: 1px black;
+  }
+  > p.removeusermovie {
+    color: red;
+    position: absolute;
+    top: -15px;
+    right: 30px;
     -webkit-text-stroke: 1px black;
   }
 `;

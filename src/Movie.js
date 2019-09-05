@@ -18,6 +18,15 @@ const Movie = ({ movie, userMovieList, setUserMovieList }) => {
     console.log(`Added ${movie.title} to context`);
   };
 
+  const removeMovie = () => {
+    userMovieList.includes(movie)
+      ? setUserMovieList(
+          [...userMovieList].filter(currentMovie => currentMovie != movie)
+        )
+      : console.log(`${movie.title} doesn't exist in userMovieList`);
+    console.log(`Remove ${movie.title} from context`);
+  };
+
   return (
     <MovieContainer>
       <Link to={`/${movie.id}`}>
@@ -25,7 +34,12 @@ const Movie = ({ movie, userMovieList, setUserMovieList }) => {
           <Poster src={`${posterPath}${movie.poster_path}`} alt={movie.title} />
         </Overdrive>
       </Link>
-      <p onClick={addMovie}>✔</p>
+      <p className="addusermovie" onClick={addMovie}>
+        ✔
+      </p>
+      <p className="removeusermovie" onClick={removeMovie}>
+        ❌
+      </p>
     </MovieContainer>
   );
 };

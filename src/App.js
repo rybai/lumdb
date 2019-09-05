@@ -17,7 +17,10 @@ const App = () => {
             <img src={logo} className="App-logo" alt="logo" />
           </Link>
         </header>
-        <UserMovies userMovieList={userMovieList} />
+        <UserMovies
+          userMovieList={userMovieList}
+          setUserMovieList={setUserMovieList}
+        />
         <Switch>
           <Route
             exact
