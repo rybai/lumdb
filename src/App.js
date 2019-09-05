@@ -7,18 +7,6 @@ import MovieDetail from './MovieDetail';
 import UserMovies from './UserMovies';
 
 const App = () => {
-  // // const [toggle, setToggle] = useState(true);
-  // const [input, setInput] = useState('Hello');
-  // eslint-disable-next-line comma-dangle
-
-  // const submit = () => {
-  //   console.log(textInput.current.value);
-  // };
-
-  // const handleTextChange = event => {
-  //   setInput(event.target.value.trim());
-  // };
-  // const textInput = useRef(); // Uncontrolled input - no validation
   const [userMovieList, setUserMovieList] = useState([]);
 
   return (
@@ -49,37 +37,8 @@ const App = () => {
     </Router>
   );
 };
+
 // * Match.params 👇👇👇 access the :id variable in Route Path
 // * const Test = ({ match }) => <h1>{match.params.id}</h1>;
-
-// const movies = [
-//   {
-//     id: 1,
-//     title: 'Star Wars',
-//     desc: 'A space movie'
-//   },
-//   {
-//     id: 2,
-//     title: 'Spider Man'
-//   },
-//   {
-//     id: 3,
-//     title: 'The Avengers'
-//   }
-// ];
-// function Welcome({ text }) {
-//   return (
-//     <div>
-//       <a
-//         className="App-link"
-//         href="https://reactjs.org"
-//         target="_blank"
-//         rel="noopener noreferrer"
-//       >
-//         {text}
-//       </a>
-//     </div>
-//   );
-// }
 
 export default App;

@@ -7,13 +7,7 @@ const UserMovies = ({ userMovieList }) => {
   return userMovieList.length > 0 ? (
     <MovieGrid>
       {userMovieList.map(movie => (
-        // movies.map(movie => (
-        <Movie
-          key={movie.id}
-          movie={movie}
-          //   userMovieList={userMovieList}
-          //   setUserMovieList={setUserMovieList}
-        />
+        <Movie key={movie.id} movie={movie} />
       ))}
     </MovieGrid>
   ) : null;
