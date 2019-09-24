@@ -47,15 +47,23 @@ export const MovieContainer = styled.div`
   > p.addusermovie {
     color: green;
     position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     top: -15px;
-    left: 30px;
+    left: -65px;
     -webkit-text-stroke: 1px black;
   }
   > p.removeusermovie {
     color: red;
     position: absolute;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
     top: -15px;
-    right: 30px;
+    right: -65px;
     -webkit-text-stroke: 1px black;
   }
 `;

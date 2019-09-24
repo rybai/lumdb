@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import tmdbAPI from './APIKey';
-import { Poster, MovieWrapper, MovieInfo } from './style';
 import Overdrive from 'react-overdrive';
+import { Poster, MovieWrapper, MovieInfo } from './style';
+import tmdbAPI from './APIKey';
 
 const posterPath = 'https://image.tmdb.org/t/p/w154';
 const backdropPath = 'https://image.tmdb.org/t/p/w1280';
